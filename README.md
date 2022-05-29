@@ -1,2 +1,2 @@
-# SoftUniTask
+# SoftUniTasks
 Homeworks
