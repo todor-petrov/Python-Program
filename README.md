@@ -1,2 +1,1 @@
-# SoftUniTasks
-Homeworks
+# SoftUni-Python-Program
