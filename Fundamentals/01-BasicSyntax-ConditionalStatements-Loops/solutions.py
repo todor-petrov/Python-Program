@@ -217,4 +217,30 @@
 # print(f'Total spirit: {spirit}')
 
 
-# # # 
+# # # More Exercises
+
+# # 01. Find the Largest
+# number = [int(x) for x in input()]
+# print(''.join(str(x) for x in sorted(number)[::-1]))
+
+
+# # 02. Find the Capitals
+# string = input()
+# print([i for i in range(len(string)) if string[i].isupper()])
+
+# # 03. Wolf in Sheep's Clothing
+# flock = input().split(', ')
+# front = len(flock) - 1
+# wolf = [i for i, x in enumerate(flock) if x == 'wolf'][0]
+# if wolf == front:
+#     print('Please go away and stop eating my sheep')
+# else:
+#     print(f'Oi! Sheep number {len(flock) - (wolf + 1)}! You are about to be eaten by a wolf!')
+
+# # 04. Sum Of A Beach
+# string = input().lower()
+# words = ['sand', 'water', 'fish', 'sun']
+# count, start = 0, -1
+# for word in words:
+#     count += len(string.split(word)) - 1
+# print(count)
