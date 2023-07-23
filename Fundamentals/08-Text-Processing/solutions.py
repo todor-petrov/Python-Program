@@ -117,4 +117,36 @@ import re
 # print(f'Unique symbols used: {len(unique)}')
 # print(element)
 
-# 10. Winning Ticket
+# # 10. Winning Ticket
+# import re
+# 
+# line = input().split(',')
+# tickets = [x.strip() for x in line]
+#
+# for ticket in tickets:
+#     winning_ticket, jackpot_ticket = [], []
+#     if len(ticket) != 20:
+#         print('invalid ticket')
+#         continue
+#
+#     first_half, second_half = ticket[:10], ticket[10:]
+#
+#     win_regex = '@{6,}|#{6,}|\\${6,}|\\^{6,}'
+#     win_first = re.findall(win_regex, first_half)
+#     win_second = re.findall(win_regex, second_half)
+#     if win_first and win_second and (win_first[0] in win_second[0] or win_second[0] in win_first[0]):
+#         winning_ticket = [win_first[0], win_second[0]]
+#
+#     jack_regex = '@{10}|#{10}|\\${10}|\\^{10}'
+#     jack_first = re.findall(jack_regex, first_half)
+#     jack_second = re.findall(jack_regex, second_half)
+#     if jack_first and jack_second and jack_first[0] == jack_second[0]:
+#         jackpot_ticket = [jack_first[0], jack_second[0]]
+#
+#     if not winning_ticket:
+#         print(f'ticket "{ticket}" - no match')
+#         continue
+#     if winning_ticket and not jackpot_ticket:
+#         print(f'ticket "{ticket}" - {len(min(winning_ticket))}{winning_ticket[0][0]}')
+#         continue
+#     print(f'ticket "{ticket}" - {10}{jackpot_ticket[0][0]} Jackpot!')
