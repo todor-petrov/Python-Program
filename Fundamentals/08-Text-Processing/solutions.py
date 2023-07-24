@@ -150,3 +150,66 @@ import re
 #         print(f'ticket "{ticket}" - {len(min(winning_ticket))}{winning_ticket[0][0]}')
 #         continue
 #     print(f'ticket "{ticket}" - {10}{jackpot_ticket[0][0]} Jackpot!')
+
+
+# # # More Exercises
+
+# # 01. Extract Person Information
+# import re
+#
+# name_pattern = r'(?<=@)(?P<name>[a-zA-Z]+)(?=\|)'
+# age_pattern = r'(?<=#)(?P<age>\d+)(?=\*)'
+# integer = int(input())
+# for _ in range(integer):
+#     info = input()
+#     name = [match.group('name') for match in re.finditer(name_pattern, info)]
+#     age = [match.group('age') for match in re.finditer(age_pattern, info)]
+#     print(f'{name[0]} is {age[0]} years old.')
+
+# # 02. ASCII Sumator
+# start_s, end_s, line = input(), input(), input()
+# print(sum([ord(line[i]) for i in range(len(line)) if ord(start_s) < ord(line[i]) < ord(end_s)]))
+
+# # 03. Treasure Finder
+# key = list(map(int, input().split()))
+# line = input()
+# while line != 'find':
+#     result, count = '', -1
+#     for i in range(len(line)):
+#         count += 1
+#         result += chr(ord(line[i]) - key[count])
+#         if count == len(key) - 1:
+#             count = -1
+#     c, d = result.index('<'), result.index('>')
+#     coordinates = result[c + 1:d]
+#     treasure = result.split('&')[1]
+#     print(f'Found {treasure} at {coordinates}')
+#     line = input()
+
+# # 04. Morse Code Translator
+# morse_code = {'..-.': 'F', '-..-': 'X', '.--.': 'P', '-': 'T', '...-': 'V', '-.-.': 'C',
+#               '.': 'E', '.---': 'J', '---': 'O', '-.-': 'K', '..': 'I', '.-..': 'L',
+#               '-.--': 'Y', '.--': 'W', '....': 'H', '-.': 'N', '.-.': 'R', '-...': 'B',
+#               '--..': 'Z', '-..': 'D', '--.-': 'Q', '--.': 'G', '--': 'M', '..-': 'U',
+#               '.-': 'A', '...': 'S'}
+# line = input().split('|')
+# result = []
+# for word in line:
+#     decrypted = ''
+#     element = word.split()
+#     for el in element:
+#         decrypted += morse_code[el]
+#     result.append(decrypted)
+# print(' '.join(result))
+
+# # 05. HTML
+# title, content = input(), input()
+# comments = []
+# command = input()
+# while command != 'end of comments':
+#     comments.append(command)
+#     command = input()
+# print(f'<h1>\n    {title}\n</h1>')
+# print(f'<article>\n    {content}\n</article>')
+# for comment in comments:
+#     print(f'<div>\n    {comment}\n</div>')
