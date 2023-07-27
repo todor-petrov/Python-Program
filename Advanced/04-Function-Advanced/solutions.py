@@ -60,3 +60,57 @@
 #         return reduce(lambda x, y: x * y, args)
 #     if operator == '/':
 #         return reduce(lambda x, y: x / y, args)
+
+
+# # # Exercise
+
+# # 01. Negative vs Positive
+# def negative_sum(nums):
+#     return sum([x for x in nums if x < 0])
+#
+#
+# def positive_sum(nums):
+#     return sum([x for x in nums if x > 0])
+#
+#
+# def difference(nums):
+#     if abs(positive_sum(nums)) > abs(negative_sum(nums)):
+#         return 'The positives are stronger than the negatives'
+#     return 'The negatives are stronger than the positives'
+#
+#
+# numbers = [int(x) for x in input().split(' ')]
+# print(negative_sum(numbers))
+# print(positive_sum(numbers))
+# print(difference(numbers))
+
+# # 02. Keyword Arguments Length
+# def kwargs_length(**kwargs):
+#     return len(kwargs)
+
+
+# # 03. Even or Odd
+# def even_odd(*args):
+#     result = {'even': [x for x in args[:-1] if x % 2 == 0],
+#               'odd': [x for x in args[:-1] if x % 2 != 0]}
+#     return result[args[-1]]
+
+# # 04. Numbers Filter
+# def even_odd_filter(**kwargs):
+#     data = {}
+#     for k in kwargs:
+#         if k == 'even':
+#             data[k] = [x for x in kwargs[k] if x % 2 == 0]
+#         else:
+#             data[k] = [x for x in kwargs[k] if x % 2 != 0]
+#     sorted_data = {k: v for k, v in sorted(data.items(), key=lambda x: -len(x[1]))}
+#     return sorted_data
+
+# # 05. Concatenate
+# def concatenate(*args, **kwargs):
+#     line = ''.join(args)
+#     for k, v in kwargs.items():
+#         line = line.replace(k, v)
+#     return line
+
+# 
