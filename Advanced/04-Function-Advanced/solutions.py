@@ -113,4 +113,84 @@
 #         line = line.replace(k, v)
 #     return line
 
-# 
+# 06. Function Executor
+# def func_executor(*args):
+#     result = []
+#     for tuple_ in args:
+#         result.append(f'{tuple_[0].__name__} - {tuple_[0](*tuple_[1])}')
+#     return '\n'.join(result)
+
+# # 07. Grocery
+# def grocery_store(**kwargs):
+#     result = []
+#     sorted_receipt = {k: v for k, v in sorted(kwargs.items(), key=lambda x: (-x[1], -len(x[0]), x[0]))}
+#     for p, q in sorted_receipt.items():
+#         result.append(f'{p}: {q}')
+#     return '\n'.join(result)
+
+# # 08. Age Assignment
+# def age_assignment(*args, **kwargs):
+#     result = []
+#     for name in sorted(args):
+#         result.append(f'{name} is {kwargs[name[0]]} years old.')
+#     return '\n'.join(result)
+
+# # 09. Recursion Palindrome
+# def palindrome(text, idx):
+#     if idx == len(text) // 2:
+#         return f'{text} is a palindrome'
+#
+#     left = text[idx]
+#     right = text[len(text) - 1 - idx]
+#
+#     if left != right:
+#         return f'{text} is not a palindrome'
+#
+#     return palindrome(text, idx + 1)
+
+# # 10. Fill the Box
+# from collections import deque
+#
+#
+# def fill_the_box(height, length, width, *args):
+#     volume = height * length * width
+#     i = args.index('Finish')
+#     cubes = deque(args[:i])
+#     while cubes:
+#         if cubes[0] <= volume:
+#             volume -= cubes.pop()
+#         else:
+#             cubes[0] -= volume
+#             volume = 0
+#             break
+#     if volume == 0:
+#         return f"No more free space! You have {sum(cubes)} more cubes."
+#     return f"There is free space in the box. You could put {volume} more cubes."
+
+# # 11. Math Operations
+# from collections import deque
+#
+#
+# def math_operations(*args, **kwargs):
+#     numbers = deque([float(x) for x in args])
+#     operations, count = kwargs, 0
+#     while numbers:
+#         number = numbers.popleft()
+#         count += 1
+#         if count == 5:
+#             count = 1
+#         if count == 1:
+#             operations['a'] += number
+#         elif count == 2:
+#             operations['s'] -= number
+#         elif count == 3 and number != 0:
+#             operations['d'] /= number
+#         elif count == 4:
+#             operations['m'] *= number
+#
+#     sorted_dict = {k: v for k, v in sorted(operations.items(), key=lambda x: (-x[1], x[0]))}
+#     result = []
+#     for k, v in sorted_dict.items():
+#         result.append(f'{k}: {v:.1f}')
+#
+#     return '\n'.join(result)
