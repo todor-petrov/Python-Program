@@ -87,3 +87,42 @@
 #         if isinstance(value, str):
 #             return cls(int(value))
 #         return 'wrong type'
+
+
+# # # Exercise
+
+# # 01. Photo Album
+# class PhotoAlbum:
+#
+#     MAX_PHOTOS_ON_PAGE = 4
+#     page_separator = f'{"-" * 11}'
+#
+#     def __init__(self, pages: int):
+#         self.pages = pages
+#         self.photos = [[] for x in range(self.pages)]
+#
+#     @classmethod
+#     def from_photos_count(cls, photos_count: int):
+#         pages = photos_count // PhotoAlbum.MAX_PHOTOS_ON_PAGE
+#         if photos_count % PhotoAlbum.MAX_PHOTOS_ON_PAGE != 0:
+#             pages += 1
+#         return cls(pages)
+#
+#     def add_photo(self, label: str):
+#         for page in self.photos:
+#             if len(page) < self.MAX_PHOTOS_ON_PAGE:
+#                 page.append(label)
+#                 return f'{label} photo added successfully on page {self.photos.index(page) + 1} slot {page.index(label) + 1}'
+#         return 'No more free slots'
+#
+#     def display(self):
+#         my_album = [PhotoAlbum.page_separator]
+#         for page in self.photos:
+#             if page:
+#                 p = ['[]' for _ in page]
+#                 my_album.append(' '.join(p))
+#                 my_album.append(PhotoAlbum.page_separator)
+#             else:
+#                 my_album.append('')
+#                 my_album.append(PhotoAlbum.page_separator)
+#         return '\n'.join(my_album)
