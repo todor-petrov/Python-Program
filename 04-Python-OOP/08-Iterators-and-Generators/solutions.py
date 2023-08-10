@@ -1,6 +1,6 @@
 # # # Lab
 
-# # 01. 01. Custom Range
+# # 01. Custom Range
 # class custom_range:
 #     def __init__(self, start, end):
 #         self.start = start
@@ -74,7 +74,6 @@
 #         start_i -= 1
 
 
-
 # # # Exercise
 
 # # 01. Take Skip
@@ -82,16 +81,109 @@
 #     def __init__(self, step, count):
 #         self.step = step
 #         self.count = count
-#         self.iteration = 0
+#         self.iteration = -1
 #
 #     def __iter__(self):
 #         return self
 #
 #     def __next__(self):
-#         if self.iteration == self.count:
+#         if self.iteration == self.count - 1:
 #             raise StopIteration
-#         result = self.iteration * self.step
 #         self.iteration += 1
-#         return result
+#         return self.iteration * self.step
 
-# 02.
+# # 02. Dictionary Iterator
+# class dictionary_iter:
+#     def __init__(self, data):
+#         self.items = list(data.items())
+#         self.idx = -1
+#
+#     def __iter__(self):
+#         return self
+#
+#     def __next__(self):
+#         if self.idx >= len(self.items) - 1:
+#             raise StopIteration
+#         self.idx += 1
+#         return self.items[self.idx]
+
+# # 03. Countdown Iterator
+# class countdown_iterator:
+#     def __init__(self, count):
+#         self.count = count + 1
+#
+#     def __iter__(self):
+#         return self
+#
+#     def __next__(self):
+#         if self.count <= 0:
+#             raise StopIteration
+#         self.count -= 1
+#         return self.count
+
+# # 04. Sequence Repeat
+# class sequence_repeat:
+#     def __init__(self, sequence, number):
+#         self.sequence = sequence
+#         self.number = number
+#         self.idx = -1
+#
+#     def __iter__(self):
+#         return self
+#
+#     def __next__(self):
+#         if self.idx == self.number - 1:
+#             raise StopIteration
+#         self.idx += 1
+#         return self.sequence[self.idx % len(self.sequence)]
+
+# # 05. Take Halves
+# def solution():
+#     def integers():
+#         num = 1
+#         while True:
+#             yield num
+#             num += 1
+#
+#     def halves():
+#         for i in integers():
+#             yield i / 2
+#
+#     def take(n, seq):
+#         return [next(seq) for _ in range(n)]
+#
+#     return take, halves, integers
+
+# # 06. Fibonacci Generator
+# def fibonacci():
+#     n1, n2 = 0, 1
+#     while True:
+#         yield n1
+#         n1, n2 = n2, n1 + n2
+
+# # 07. Reader
+# def read_next(*args):
+#     for seq in args:
+#         yield from seq
+
+# # 08. Prime Numbers
+# from math import sqrt
+#
+#
+# def get_primes(numbers: list):
+#     for number in numbers:
+#         if number <= 1:
+#             continue
+#         for divisor in range(2, int(sqrt(number)) + 1):
+#             if number % divisor == 0:
+#                 break
+#         else:
+#             yield number
+
+# # 09. Possible permutations
+# from itertools import permutations
+#
+#
+# def possible_permutations(sequence):
+#     for el in permutations(sequence):
+#         yield list(el)
