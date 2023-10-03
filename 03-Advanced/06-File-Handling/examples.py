@@ -1,5 +1,5 @@
 # # 01. File Opener
-import os
+# import os
 
 # try:
 #     file = open('text.txt')
@@ -26,3 +26,15 @@ import os
 #     file.writelines('I just created my first file!')
 
 
+# # 04. File Delete
+# import os
+#
+# try:
+#     os.remove('my_first_file.txt')
+# except FileNotFoundError:
+#     print('File already deleted!')
+#
+# if os.path.exists('my_first_file.txt'):
+#     os.remove('my_first_file.txt')
+# else:
+#     print('File already deleted!')
