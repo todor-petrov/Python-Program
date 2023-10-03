@@ -19,3 +19,10 @@ import os
 #         print(sum(int(line) for line in file.readlines()))
 # except FileNotFoundError:
 #     print('File not found')
+
+
+# # 03. File Writer
+# with open('my_first_file.txt', 'a') as file:
+#     file.writelines('I just created my first file!')
+
+
