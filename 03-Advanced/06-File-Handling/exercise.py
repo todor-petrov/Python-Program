@@ -9,7 +9,7 @@
 #     print(*text[row].split()[::-1])
 
 
-# # Line Numbers
+# # 02. Line Numbers
 # from string import punctuation
 #
 # output_file = open('output.txt', 'a')
