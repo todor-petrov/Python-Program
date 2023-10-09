@@ -11,3 +11,6 @@
 #         result /= number
 #
 # print(result)
+
+
+# # 02. Value Cannot Be Negative
