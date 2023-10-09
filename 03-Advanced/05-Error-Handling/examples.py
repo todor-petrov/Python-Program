@@ -14,3 +14,12 @@
 
 
 # # 02. Value Cannot Be Negative
+class ValueCannotBeNegative(Exception):
+    pass
+
+
+cycles = 5
+for i in range(cycles):
+    number = int(input())
+    if number < 0:
+        raise ValueCannotBeNegative
